@@ -1,0 +1,113 @@
+repositories:
+  src/Robots:
+    type: git
+    url: https://github.com/IntelligentRoboticsLabs/Robots.git
+    version: foxy
+  src/ThirdParty/control_msgs:
+    type: git
+    url: https://github.com/ros-controls/control_msgs.git
+    version: foxy-devel
+  src/ThirdParty/control_toolbox:
+    type: git
+    url: https://github.com/ros-controls/control_toolbox.git
+    version: ros2-master
+  src/ThirdParty/diagnostics:
+    type: git
+    url: https://github.com/ros/diagnostics.git
+    version: galactic
+  src/ThirdParty/gazebo_ros2_control:
+    type: git
+    url: https://github.com/pal-robotics-forks/gazebo_ros2_control.git
+    version: add-imu-sensor-parse
+  src/ThirdParty/hey5_description:
+    type: git
+    url: https://github.com/pal-robotics/hey5_description.git
+    version: foxy-devel
+  src/ThirdParty/launch_pal:
+    type: git
+    url: https://github.com/pal-robotics/launch_pal.git
+    version: 40090897503178ef7eea0df08eaf590d85988cd2
+  src/ThirdParty/pal_gazebo_worlds:
+    type: git
+    url: https://github.com/pal-robotics/pal_gazebo_worlds.git
+    version: foxy-devel
+  src/ThirdParty/pal_gripper:
+    type: git
+    url: https://github.com/pal-robotics/pal_gripper.git
+    version: foxy-devel
+  src/ThirdParty/pmb2_navigation:
+    type: git
+    url: https://github.com/pal-robotics/pmb2_navigation.git
+    version: foxy-devel
+  src/ThirdParty/pmb2_robot:
+    type: git
+    url: https://github.com/pal-robotics/pmb2_robot.git
+    version: foxy-devel
+  src/ThirdParty/rcl_interfaces:
+    type: git
+    url: https://github.com/ros2/rcl_interfaces.git
+    version: galactic
+  src/ThirdParty/realtime_tools:
+    type: git
+    url: https://github.com/ros-controls/realtime_tools.git
+    version: foxy-devel
+  src/ThirdParty/ros2_control:
+    type: git
+    url: https://github.com/ros-controls/ros2_control.git
+    version: e3e14e07f9c2191293e64fa925656cab8776e920
+  src/ThirdParty/ros2_controllers:
+    type: git
+    url: https://github.com/ros-controls/ros2_controllers.git
+    version: 35cae273f8f23035d23269b523d58285ed718ce1
+  src/ThirdParty/teleop_tools:
+    type: git
+    url: https://github.com/ros-teleop/teleop_tools.git
+    version: foxy-devel
+  src/ThirdParty/test_interface_files:
+    type: git
+    url: https://github.com/ros2/test_interface_files.git
+    version: galactic
+  src/ThirdParty/tiago_description_calibration:
+    type: git
+    url: https://github.com/pal-robotics/tiago_description_calibration.git
+    version: foxy-devel
+  src/ThirdParty/tiago_robot:
+    type: git
+    url: https://github.com/fmrico/tiago_robot.git
+    version: no-arm
+  src/ThirdParty/tiago_simulation:
+    type: git
+    url: https://github.com/pal-robotics/tiago_simulation.git
+    version: foxy-devel
+  src/ThirdParty/twist_mux:
+    type: git
+    url: https://github.com/ros-teleop/twist_mux.git
+    version: foxy-devel
+  src/ThirdParty/urdf_test:
+    type: git
+    url: https://github.com/pal-robotics/urdf_test
+    version: 09fce16e8151cf61d9e101b7b653e3e123b0f973
+  src/ThirdParty/xacro:
+    type: git
+    url: https://github.com/ros/xacro.git
+    version: ros2
+  src/turtlebot3/turtlebot3:
+    type: git
+    url: https://github.com/ROBOTIS-GIT/turtlebot3.git
+    version: ros2
+  src/turtlebot3/turtlebot3_msgs:
+    type: git
+    url: https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+    version: ros2
+  src/turtlebot3/turtlebot3_simulations:
+    type: git
+    url: https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+    version: ros2
+  src/utils/DynamixelSDK:
+    type: git
+    url: https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+    version: ros2
+  src/utils/hls_lfcd_lds_driver:
+    type: git
+    url: https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver.git
+    version: ros2
