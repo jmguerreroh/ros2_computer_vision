@@ -40,8 +40,6 @@ target_link_libraries(cv_node ${PCL_LIBRARIES})
 install(TARGETS cv_node
   DESTINATION lib/${PROJECT_NAME})
 
-
-
 add_executable(pcl_node src/pcl_node.cpp)
 target_include_directories(pcl_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -61,6 +59,9 @@ target_link_libraries(pcl_node ${PCL_LIBRARIES})
 
 install(TARGETS pcl_node
   DESTINATION lib/${PROJECT_NAME})
+
+install(DIRECTORY launch
+        DESTINATION share/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
