@@ -1,5 +1,5 @@
 repositories:
-  src/Robots:
+  src/ThirdParty/Robots:
     type: git
     url: https://github.com/IntelligentRoboticsLabs/Robots.git
     version: foxy
@@ -95,23 +95,23 @@ repositories:
     type: git
     url: https://github.com/ros/xacro.git
     version: ros2
-  src/turtlebot3/turtlebot3:
+  src/ThirdParty/turtlebot3/turtlebot3:
     type: git
     url: https://github.com/ROBOTIS-GIT/turtlebot3.git
     version: ros2
-  src/turtlebot3/turtlebot3_msgs:
+  src/ThirdParty/turtlebot3/turtlebot3_msgs:
     type: git
     url: https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
     version: ros2
-  src/turtlebot3/turtlebot3_simulations:
+  src/ThirdParty/turtlebot3/turtlebot3_simulations:
     type: git
     url: https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
     version: ros2
-  src/utils/DynamixelSDK:
+  src/ThirdParty/utils/DynamixelSDK:
     type: git
     url: https://github.com/ROBOTIS-GIT/DynamixelSDK.git
     version: ros2
-  src/utils/hls_lfcd_lds_driver:
+  src/ThirdParty/utils/hls_lfcd_lds_driver:
     type: git
     url: https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver.git
     version: ros2
