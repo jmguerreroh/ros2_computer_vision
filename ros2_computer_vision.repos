@@ -3,6 +3,10 @@ repositories:
     type: git
     url: https://github.com/IntelligentRoboticsLabs/Robots.git
     version: foxy
+  src/ThirdParty/aws-robomaker-small-house-world:
+    type: git
+    url: https://github.com/aws-robotics/aws-robomaker-small-house-world.git
+    version: ros2
   src/ThirdParty/control_msgs:
     type: git
     url: https://github.com/ros-controls/control_msgs.git

@@ -3,10 +3,9 @@
 <package format="3">
   <name>computer_vision</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="root@todo.todo">root</maintainer>
-  <license>TODO: License declaration</license>
-
+  <description>This packages contains OpenCV and PCL examples with AWS House and Tiago</description>
+  <maintainer email="josemiguel.guerrero@urjc.es">Jose Miguel Guerrero</maintainer>
+  <license>Apache License, Version 2.0</license>
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>rclcpp</depend>
