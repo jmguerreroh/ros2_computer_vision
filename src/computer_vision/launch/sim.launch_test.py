@@ -31,6 +31,11 @@ def generate_launch_description():
         launch_arguments={
           'world_name': 'home'
         }.items())
+
+    #tiago_sim_cmd = IncludeLaunchDescription(
+    #    PythonLaunchDescriptionSource(os.path.join(tiago_gazebo_dir, 'launch', 'tiago_gazebo.launch.py')),
+    #    )
+    
     
     declare_use_sim_time_cmd = DeclareLaunchArgument(
         'use_sim_time',
@@ -39,7 +44,15 @@ def generate_launch_description():
 
     ld = LaunchDescription()
 
+
     ld.add_action(tiago_sim_cmd)
     ld.add_action(declare_use_sim_time_cmd)
+
+    #hospital_pkg_dir = get_package_share_directory('aws_robomaker_hospital_world')
+    #hospital_launch_path = os.path.join(hospital_pkg_dir, 'launch')
+    #hospital_world_cmd = IncludeLaunchDescription(
+    #        PythonLaunchDescriptionSource([hospital_launch_path, '/hospital.launch.py'])
+    #    )
+    #ld.add_action(hospital_world_cmd)
 
     return ld

@@ -1,12 +1,4 @@
 repositories:
-  src/ThirdParty/Robots:
-    type: git
-    url: https://github.com/IntelligentRoboticsLabs/Robots.git
-    version: foxy
-  src/ThirdParty/aws-robomaker-small-house-world:
-    type: git
-    url: https://github.com/aws-robotics/aws-robomaker-small-house-world.git
-    version: ros2
   src/ThirdParty/control_msgs:
     type: git
     url: https://github.com/ros-controls/control_msgs.git
@@ -30,7 +22,7 @@ repositories:
   src/ThirdParty/launch_pal:
     type: git
     url: https://github.com/pal-robotics/launch_pal.git
-    version: 40090897503178ef7eea0df08eaf590d85988cd2
+    version: 0.0.3
   src/ThirdParty/pal_gazebo_worlds:
     type: git
     url: https://github.com/pal-robotics/pal_gazebo_worlds.git
@@ -58,11 +50,11 @@ repositories:
   src/ThirdParty/ros2_control:
     type: git
     url: https://github.com/ros-controls/ros2_control.git
-    version: e3e14e07f9c2191293e64fa925656cab8776e920
+    version: 0.7.1
   src/ThirdParty/ros2_controllers:
     type: git
     url: https://github.com/ros-controls/ros2_controllers.git
-    version: 35cae273f8f23035d23269b523d58285ed718ce1
+    version: 0.4.0
   src/ThirdParty/teleop_tools:
     type: git
     url: https://github.com/ros-teleop/teleop_tools.git
@@ -90,28 +82,8 @@ repositories:
   src/ThirdParty/urdf_test:
     type: git
     url: https://github.com/pal-robotics/urdf_test
-    version: 09fce16e8151cf61d9e101b7b653e3e123b0f973
+    version: 2.0.0
   src/ThirdParty/xacro:
     type: git
     url: https://github.com/ros/xacro.git
-    version: ros2
-  src/ThirdParty/turtlebot3/turtlebot3:
-    type: git
-    url: https://github.com/ROBOTIS-GIT/turtlebot3.git
-    version: ros2
-  src/ThirdParty/turtlebot3/turtlebot3_msgs:
-    type: git
-    url: https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
-    version: ros2
-  src/ThirdParty/turtlebot3/turtlebot3_simulations:
-    type: git
-    url: https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
-    version: ros2
-  src/ThirdParty/utils/DynamixelSDK:
-    type: git
-    url: https://github.com/ROBOTIS-GIT/DynamixelSDK.git
-    version: ros2
-  src/ThirdParty/utils/hls_lfcd_lds_driver:
-    type: git
-    url: https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver.git
     version: ros2
