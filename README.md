@@ -10,7 +10,7 @@ This project contains code examples created in Visual Studio Code for Computer V
 ## About
 
 This is a project made by [José Miguel Guerrero], Assistant Professor at [Universidad Rey Juan Carlos].
-Copyright &copy; 2021.
+Copyright &copy; 2022.
 
 [Universidad Rey Juan Carlos]: https://www.urjc.es/
 [José Miguel Guerrero]: https://sites.google.com/view/jmguerrero
