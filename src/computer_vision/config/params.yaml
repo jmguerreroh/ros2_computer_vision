@@ -28,7 +28,7 @@ computer_vision:
 #    z: '-z 0.0'
 #    roll: '-R 0.0'
 #    pitch: '-P 0.0'
-#    yaw: '-Y 0.0'
+#    yaw: '-Y 1.58'
 #  world: "aws_racetrack_day_empty"
 #  tiago_position: 
 #    x: '-x 2.75'
