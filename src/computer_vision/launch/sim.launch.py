@@ -13,23 +13,37 @@
 # limitations under the License.
 
 import os
-
 from ament_index_python.packages import get_package_share_directory
-
 from launch import LaunchDescription
 from launch.actions import (DeclareLaunchArgument, GroupAction,
                             IncludeLaunchDescription, SetEnvironmentVariable)
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PythonExpression
+import yaml
+
 
 def generate_launch_description():
     
     tiago_gazebo_dir = get_package_share_directory('tiago_gazebo')
+    
+    config = os.path.join(
+        get_package_share_directory('computer_vision'),
+        'config',
+        'params.yaml'
+        )
+
+    with open(config, "r") as stream:
+        try:
+            conf = (yaml.safe_load(stream))
+            
+        except yaml.YAMLError as exc:
+            print(exc)
+
     tiago_sim_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(tiago_gazebo_dir, 'launch', 'tiago_gazebo.launch.py')),
         launch_arguments={
-          'world_name': 'home'
+          'world_name': conf['computer_vision']['world']
         }.items())
     
     declare_use_sim_time_cmd = DeclareLaunchArgument(

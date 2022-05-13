@@ -96,6 +96,10 @@ install(TARGETS cv_pcl_node
 install(DIRECTORY  launch
         DESTINATION share/${PROJECT_NAME})
 
+# Configuration
+install(DIRECTORY  config
+        DESTINATION share/${PROJECT_NAME})
+
 #######
 
 if(BUILD_TESTING)
