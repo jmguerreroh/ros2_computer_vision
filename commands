@@ -1,0 +1,20 @@
+# Launch Gazebo world with Tiago (use computer_vision/config/params.yaml to change Tiago position and world)
+ros2 launch computer_vision sim.launch.py
+
+# Launch teleop to move Tiago
+ros2 run key_teleop key_teleop
+
+# Launch OpenCV image processing (check topic inside)
+ros2 run computer_vision cv_node
+
+# Launch PointCloud Library (PCL) processing (check topic inside)
+ros2 run computer_vision pcl_node
+
+# Launch OpenCV image and PointCloud Library (PCL) processing (check topics inside)
+ros2 run computer_vision cv_pcl_node
+
+# Compile only OpenCV package
+colcon build --symlink-install --packages-select computer_vision
+
+# Run rviz
+rviz2
