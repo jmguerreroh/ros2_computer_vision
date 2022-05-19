@@ -5,7 +5,50 @@
 
 This project contains code examples created in Visual Studio Code for Computer Vision using C++ & OpenCV & Point Cloud Library (PCL) using ROS2. These examples are created for the Computer Vision Subject of Robotics Software Engineering Degree at URJC.
 
+This package allows running different Gazebo worlds, including the [AWS Robomaker](https://github.com/aws-robotics) worlds, using the Tiago robot from [PAL Robotics](https://github.com/pal-robotics)
 
+
+# Installation
+
+Execute installation script:
+```bash
+./setup.sh
+``` 
+
+# Run Gazebo & Tiago in ROS2
+
+```bash
+source install/setup.sh
+ros2 launch computer_vision sim.launch.py
+``` 
+
+To change the Gazebo world or the initial position/rotation of the Tiago robot, you can modify the `config/params.yaml` file.
+
+# Run examples in ROS2
+
+* OpenCV node
+```bash
+source install/setup.sh
+ros2 run computer_vision cv_node
+``` 
+
+* PCL node
+
+```bash
+source install/setup.sh
+ros2 run computer_vision pcl_node
+``` 
+
+* OpenCV & PCL node
+
+```bash
+source install/setup.sh
+ros2 run computer_vision pcl_node
+``` 
+
+# Help
+
+You can check the `commands` file to run other nodes, such as `key_teleop` to move Tiago using your keyboard.
 
 ## About
 
