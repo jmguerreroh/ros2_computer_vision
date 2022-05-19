@@ -16,7 +16,7 @@ rm -rf src/aws_worlds
 # Building project
 colcon build --symlink-install
 
-# Including project's path in ~/.bashrc
+# Including the project's path in ~/.bashrc
 #source install/setup.bash
 #echo "source "${PWD}"/install/setup.bash" >> ~/.bashrc 
 
