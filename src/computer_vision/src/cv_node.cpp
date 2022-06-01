@@ -22,14 +22,10 @@
 #include "sensor_msgs/msg/point_cloud2.hpp"
 #include <image_transport/image_transport.hpp>
 
-#include <memory>
 #include "cv_bridge/cv_bridge.h"
 #include <opencv2/opencv.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
-
-#include "rclcpp/rclcpp.hpp"
-#include "std_msgs/msg/string.hpp"
 
 
 cv::Mat image_processing(const cv::Mat in_image);

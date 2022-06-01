@@ -22,15 +22,11 @@
 #include "sensor_msgs/msg/point_cloud2.hpp"
 #include <image_transport/image_transport.hpp>
 
-#include <memory>
 #include "cv_bridge/cv_bridge.h"
 #include <opencv2/opencv.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/dnn.hpp>
-
-#include "rclcpp/rclcpp.hpp"
-#include "std_msgs/msg/string.hpp"
 
 #include <pcl/point_types.h>
 #include <pcl_conversions/pcl_conversions.h>
@@ -38,7 +34,6 @@
 #include <pcl/PCLPointCloud2.h>
 #include <pcl/conversions.h>
 #include <pcl/filters/voxel_grid.h>
-#include <pcl/visualization/cloud_viewer.h>
 #include <pcl/filters/statistical_outlier_removal.h>
 #include <pcl/filters/extract_indices.h>
 #include <pcl/segmentation/sac_segmentation.h>
