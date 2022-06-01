@@ -41,7 +41,7 @@ ros2 run computer_vision pcl_node
 * OpenCV & PCL node
 ```bash
 source install/setup.sh
-ros2 run computer_vision pcl_node
+ros2 run computer_vision cv_pcl_node
 ``` 
 
 # Help
