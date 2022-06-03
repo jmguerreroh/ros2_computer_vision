@@ -45,3 +45,11 @@ computer_vision:
 #    roll: '-R 0.0'
 #    pitch: '-P 0.0'
 #    yaw: '-Y 0.0'
+#  world: "aws_bookstore"
+#  tiago_position: 
+#    x: '-x 0.0'
+#    y: '-y 0.0'
+#    z: '-z 0.0'
+#    roll: '-R 0.0'
+#    pitch: '-P 0.0'
+#    yaw: '-Y 0.0'
