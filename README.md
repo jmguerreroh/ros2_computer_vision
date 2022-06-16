@@ -10,6 +10,11 @@ This package allows running different Gazebo worlds, including the [AWS Robomake
 
 # Installation
 
+Source your ROS2 distro:
+```bash
+source /opt/ros/galactic/setup.bash
+```
+
 Execute installation script:
 ```bash
 ./setup.sh
