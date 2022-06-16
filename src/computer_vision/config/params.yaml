@@ -13,7 +13,10 @@
 # limitations under the License.
 
 computer_vision:
+# Default position
   world: "aws_house"
+#  world: "aws_small_warehouse_no_roof"
+#  world: "aws_bookstore"
   tiago_position: 
     x: '-x 0.0'
     y: '-y 0.0'
@@ -21,6 +24,8 @@ computer_vision:
     roll: '-R 0.0'
     pitch: '-P 0.0'
     yaw: '-Y 0.0'
+
+# Hospital position
 #  world: "aws_hospital"
 #  tiago_position: 
 #    x: '-x 0.0'
@@ -29,27 +34,15 @@ computer_vision:
 #    roll: '-R 0.0'
 #    pitch: '-P 0.0'
 #    yaw: '-Y 1.58'
+
+# Racetrack position
 #  world: "aws_racetrack_day_empty"
+#  world: "aws_racetrack_day"
+#  world: "aws_racetrack_night"
 #  tiago_position: 
 #    x: '-x 2.75'
 #    y: '-y -15.0'
 #    z: '-z 0.2'
-#    roll: '-R 0.0'
-#    pitch: '-P 0.0'
-#    yaw: '-Y 0.0'
-#  world: "aws_small_warehouse_no_roof"
-#  tiago_position: 
-#    x: '-x 0.0'
-#    y: '-y 0.0'
-#    z: '-z 0.0'
-#    roll: '-R 0.0'
-#    pitch: '-P 0.0'
-#    yaw: '-Y 0.0'
-#  world: "aws_bookstore"
-#  tiago_position: 
-#    x: '-x 0.0'
-#    y: '-y 0.0'
-#    z: '-z 0.0'
 #    roll: '-R 0.0'
 #    pitch: '-P 0.0'
 #    yaw: '-Y 0.0'
