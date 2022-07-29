@@ -13,7 +13,7 @@ rm -rf src/computer_vision/files/tiago_spawn.launch.py
 cp -r src/aws_worlds/* src/ThirdParty/pal_gazebo_worlds/
 rm -rf src/aws_worlds
 cp src/computer_vision/files/CMakeLists.txt src/ThirdParty/pal_gazebo_worlds/CMakeLists.txt
-rm -rf src/computer_vision/files/CMakeLists.txt
+rm -rf src/computer_vision/files
 
 # Building project
 colcon build --symlink-install
