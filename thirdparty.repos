@@ -1,4 +1,8 @@
 repositories:
+  src/ThirdParty/aws-robomaker-hospital-world:
+    type: git
+    url: https://github.com/jmguerreroh/aws-robomaker-hospital-world.git
+    version: ros2
   src/ThirdParty/control_msgs:
     type: git
     url: https://github.com/ros-controls/control_msgs.git

@@ -24,11 +24,12 @@ import yaml
 
 
 def generate_launch_description():
-    
+
     tiago_gazebo_dir = get_package_share_directory('tiago_gazebo')
-    
+    cv_dir = get_package_share_directory('computer_vision')
+
     config = os.path.join(
-        get_package_share_directory('computer_vision'),
+        cv_dir,
         'config',
         'params.yaml'
         )
@@ -36,16 +37,16 @@ def generate_launch_description():
     with open(config, "r") as stream:
         try:
             conf = (yaml.safe_load(stream))
-            
+
         except yaml.YAMLError as exc:
             print(exc)
 
     tiago_sim_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(tiago_gazebo_dir, 'launch', 'tiago_gazebo.launch.py')),
+        PythonLaunchDescriptionSource(os.path.join(cv_dir, 'launch', 'tiago_cv.launch.py')),
         launch_arguments={
           'world_name': conf['computer_vision']['world']
         }.items())
-    
+
     declare_use_sim_time_cmd = DeclareLaunchArgument(
         'use_sim_time',
         default_value='True',
