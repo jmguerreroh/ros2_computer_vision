@@ -69,6 +69,14 @@ def generate_launch_description():
         except yaml.YAMLError as exc:
             print(exc)
 
+    # Original path for PAL worlds
+    gazebo = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([os.path.join(
+            get_package_share_directory('pal_gazebo_worlds'),
+            'launch'), '/pal_gazebo.launch.py']),
+    )
+
+    # Specific path for AWS worlds
     if "aws" in conf['computer_vision']['world']:
         if "hospital" in conf['computer_vision']['world']:
             gazebo = IncludeLaunchDescription(
@@ -78,12 +86,7 @@ def generate_launch_description():
             )
         if "racetrack" in conf['computer_vision']['world']:
             print("RACETRACK")
-    else:
-        gazebo = IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([os.path.join(
-                get_package_share_directory('pal_gazebo_worlds'),
-                'launch'), '/pal_gazebo.launch.py']),
-        )
+
 
 
     tiago_spawn = include_launch_py_description(

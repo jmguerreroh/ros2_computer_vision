@@ -17,7 +17,7 @@ computer_vision:
   world: "aws_house"
 #  world: "aws_small_warehouse_no_roof"
 #  world: "aws_bookstore"
-  tiago_position: 
+  tiago_position:
     x: '-x 0.0'
     y: '-y 0.0'
     z: '-z 0.0'
@@ -27,7 +27,7 @@ computer_vision:
 
 # Hospital position
 #  world: "aws_hospital"
-#  tiago_position: 
+#  tiago_position:
 #    x: '-x 0.0'
 #    y: '-y 1.0'
 #    z: '-z 0.0'
@@ -39,7 +39,7 @@ computer_vision:
 #  world: "aws_racetrack_day_empty"
 #  world: "aws_racetrack_day"
 #  world: "aws_racetrack_night"
-#  tiago_position: 
+#  tiago_position:
 #    x: '-x 2.75'
 #    y: '-y -15.0'
 #    z: '-z 0.2'
