@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Installing ThirdParty repos
+sudo apt update
 sudo apt install python3-vcstool python3-pip -y
 vcs import < thirdparty.repos
 
