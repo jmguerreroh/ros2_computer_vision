@@ -36,7 +36,7 @@ computer_vision:
 #    yaw: '-Y 1.58'
 
 # Racetrack position
-#  world: "aws_racetrack_day_empty"
+#  world: "aws_racetrack"
 #  tiago_position:
 #    x: '-x 2.75'
 #    y: '-y -15.0'
