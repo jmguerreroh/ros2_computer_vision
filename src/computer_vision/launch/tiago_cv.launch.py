@@ -69,7 +69,7 @@ def generate_launch_description():
         except yaml.YAMLError as exc:
             print(exc)
 
-    # Original path for PAL worlds
+    # Default: Original path for PAL worlds
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('pal_gazebo_worlds'),
@@ -78,16 +78,40 @@ def generate_launch_description():
 
     # Specific path for AWS worlds
     if "aws" in conf['computer_vision']['world']:
+        # Default: Small house
+        gazebo = IncludeLaunchDescription(
+            PythonLaunchDescriptionSource([os.path.join(
+                get_package_share_directory('aws_robomaker_small_house_world'),
+                'launch'), '/view_small_house.launch.py']),
+        )
+        # Hospital
         if "hospital" in conf['computer_vision']['world']:
             gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('aws_robomaker_hospital_world'),
                     'launch'), '/view_hospital.launch.py']),
             )
+        # Racetrack - default day. Change mode in /view_racetrack.launch.py
         if "racetrack" in conf['computer_vision']['world']:
-            print("RACETRACK")
-
-
+            gazebo = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory('aws_robomaker_racetrack_world'),
+                    'launch'), '/view_racetrack.launch.py']),
+            )
+        # Small warehouse
+        if "warehouse" in conf['computer_vision']['world']:
+            gazebo = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory('aws_robomaker_small_warehouse_world'),
+                    'launch'), '/no_roof_small_warehouse.launch.py']),
+            )
+        # Bookstore
+        if "bookstore" in conf['computer_vision']['world']:
+            gazebo = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory('aws_robomaker_bookstore_world'),
+                    'launch'), '/view_bookstore.launch.py']),
+            )
 
     tiago_spawn = include_launch_py_description(
         'computer_vision', ['launch', 'tiago_spawn.launch.py'])
