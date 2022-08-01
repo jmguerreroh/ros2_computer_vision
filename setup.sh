@@ -9,7 +9,7 @@ colcon build --symlink-install
 
 # Setup Gazebo to find models - GAZEBO_MODEL_PATH
 source /usr/share/gazebo/setup.bash
-echo "source /usr/share/gazebo/setup.bash" >> ~/bashrc
+echo "source /usr/share/gazebo/setup.bash" >> ~/.bashrc
 
 # Project's path
 source install/setup.bash
