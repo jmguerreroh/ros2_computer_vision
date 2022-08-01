@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>computer_vision</name>
-  <version>1.0.0</version>  
+  <version>1.0.0</version>
   <description>This packages contains OpenCV and PCL examples for ROS2</description>
   <maintainer email="josemiguel.guerrero@urjc.es">Jose Miguel Guerrero</maintainer>
   <license>Apache License, Version 2.0</license>
@@ -10,10 +10,11 @@
 
   <depend>rclcpp</depend>
   <depend>image_transport</depend>
-  <depend>cv_bridge</depend>
+  <depend>cv_bridge</depend>s
   <depend>sensor_msgs</depend>
   <depend>std_msgs</depend>
   <depend>OpenCV</depend>
+  <depend>PCL</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
