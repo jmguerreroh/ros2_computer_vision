@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Installing ThirdParty repos
-sudo apt install python3-vcstool -y
+sudo apt install python3-vcstool python3-pip -y
 vcs import < thirdparty.repos
 
 # Building project
+rosdep install --from-paths . --ignore-src -r -y
 colcon build --symlink-install
 
 # Setup Gazebo to find models - GAZEBO_MODEL_PATH
