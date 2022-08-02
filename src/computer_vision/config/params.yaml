@@ -14,16 +14,26 @@
 
 computer_vision:
 # Default position
-  world: "aws_house"
-#  world: "aws_warehouse"
-#  world: "aws_bookstore"
+#  world: "aws_house"
+  world: "aws_bookstore"
   tiago_position:
     x: '-x 0.0'
     y: '-y 0.0'
-    z: '-z 0.0'
+    z: '-z 0.2'
     roll: '-R 0.0'
     pitch: '-P 0.0'
     yaw: '-Y 0.0'
+
+# Warehouse position
+# computer_vision:
+#   world: "aws_warehouse"
+#   tiago_position:
+#     x: '-x 0.0'
+#     y: '-y 0.0'
+#     z: '-z 0.2'
+#     roll: '-R 0.0'
+#     pitch: '-P 0.0'
+#     yaw: '-Y 0.2'
 
 # Hospital position
 #  world: "aws_hospital"

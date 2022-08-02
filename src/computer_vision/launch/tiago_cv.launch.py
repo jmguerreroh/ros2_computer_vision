@@ -19,9 +19,8 @@ from os import environ, pathsep
 from ament_index_python.packages import get_package_share_directory, get_package_prefix
 
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable, RegisterEventHandler, TimerAction, LogInfo
+from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.event_handlers import OnExecutionComplete
 
 from launch_pal.include_utils import include_launch_py_description
 
@@ -57,11 +56,7 @@ def get_resource_paths(packages_names):
 def generate_launch_description():
     cv_dir = get_package_share_directory('computer_vision')
 
-    config = os.path.join(
-                cv_dir,
-                'config',
-                'params.yaml'
-                )
+    config = os.path.join(cv_dir, 'config', 'params.yaml')
 
     with open(config, "r") as stream:
         try:
@@ -114,6 +109,7 @@ def generate_launch_description():
                     'launch'), '/view_bookstore.launch.py']),
             )
 
+
     tiago_spawn = include_launch_py_description(
         'computer_vision', ['launch', 'tiago_spawn.launch.py'])
 
@@ -143,15 +139,16 @@ def generate_launch_description():
     return LaunchDescription([
         SetEnvironmentVariable("GAZEBO_MODEL_PATH", model_path),
         # Using this prevents shared library from being found
-        # SetEnvironmentVariable("GAZEBO_RESOURCE_PATH", tiago_resource_path),
+        SetEnvironmentVariable("GAZEBO_RESOURCE_PATH", resource_path),
         gazebo,
         TimerAction(
-            period=2.0,
+            period=5.0,
             actions=[tiago_spawn],
+            cancel_on_shutdown=False
         ),
         TimerAction(
-            period=2.0,
+            period=7.0,
             actions=[tiago_bringup],
+            cancel_on_shutdown=False
         )
-        # tuck_arm
     ])
