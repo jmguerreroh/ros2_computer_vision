@@ -14,8 +14,8 @@
 
 computer_vision:
 # Default position
-#  world: "aws_house"
-  world: "aws_bookstore"
+  world: "aws_house"
+#  world: "aws_bookstore"
   tiago_position:
     x: '-x 0.0'
     y: '-y 0.0'
