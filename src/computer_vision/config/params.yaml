@@ -12,45 +12,37 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# PAL Gazebo worlds:
+#
+# aruco             door_obstacle      memmo_simple           pick                        stairs
+# ball              empty_room         narrow_passage         reemc_indoor                stamping_demo
+# cabinet_grasping  empty              objects_on_table       reemc                       tabletop_cube
+# calibration_room  factory            pal_office             simple_office_with_people   tabletop_cylinder
+# chairs            featured           pal_textured_object    simple_office               t_shaped
+# corridor_110cm    footstep_obstacle  passage_110cm          simple_ramp                 tutorial_office
+# corridor_60cm     hit_table          passage_60cm           small_factory               voronoi_graph
+# corridor_70cm     home               passage_70cm           small_office_door_obstacle  willow_garage
+# corridor_85cm     hospital_flat      pg_demo                small_office_inventory      world_wall_REEM_photo
+# dock_and_aruco    hospital           pick_place_cabinet     small_office
+# docker_chair      look_to_point      pick_place_close_demo  small_textured_office
+# dock_station      low_sun_empty      pick_place_demo        socmcs
+#
+# Recommended position - x:  0.0 - y:   0.0  - z: 0.0 - roll: 0.0 - pitch: 0.0 - yaw:  0.0
+
+# AWS worlds and recommended positions:
+#
+# aws_house     - x:  0.0 - y:   0.0  - z: 0.0 - roll: 0.0 - pitch: 0.0 - yaw:  0.0
+# aws_bookstore - x:  0.0 - y:   0.0  - z: 0.0 - roll: 0.0 - pitch: 0.0 - yaw:  0.0
+# aws_warehouse - x:  0.0 - y:   0.0  - z: 0.1 - roll: 0.0 - pitch: 0.0 - yaw:  0.0
+# aws_hospital  - x:  0.0 - y:  -1.0  - z: 0.0 - roll: 0.0 - pitch: 0.0 - yaw: 1.58
+# aws_racetrack - x: 2.75 - y: -15.0  - z: 0.2 - roll: 0.0 - pitch: 0.0 - yaw:  0.0
+
 computer_vision:
-# Default position
   world: "aws_house"
-#  world: "aws_bookstore"
   tiago_position:
     x: '-x 0.0'
     y: '-y 0.0'
-    z: '-z 0.2'
+    z: '-z 0.0'
     roll: '-R 0.0'
     pitch: '-P 0.0'
     yaw: '-Y 0.0'
-
-# Warehouse position
-# computer_vision:
-#   world: "aws_warehouse"
-#   tiago_position:
-#     x: '-x 0.0'
-#     y: '-y 0.0'
-#     z: '-z 0.2'
-#     roll: '-R 0.0'
-#     pitch: '-P 0.0'
-#     yaw: '-Y 0.2'
-
-# Hospital position
-#  world: "aws_hospital"
-#  tiago_position:
-#    x: '-x 0.0'
-#    y: '-y 1.0'
-#    z: '-z 0.0'
-#    roll: '-R 0.0'
-#    pitch: '-P 0.0'
-#    yaw: '-Y 1.58'
-
-# Racetrack position
-#  world: "aws_racetrack"
-#  tiago_position:
-#    x: '-x 2.75'
-#    y: '-y -15.0'
-#    z: '-z 0.2'
-#    roll: '-R 0.0'
-#    pitch: '-P 0.0'
-#    yaw: '-Y 0.0'
