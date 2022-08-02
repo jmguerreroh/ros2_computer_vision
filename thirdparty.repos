@@ -19,22 +19,10 @@ repositories:
     type: git
     url: https://github.com/aws-robotics/aws-robomaker-small-warehouse-world.git
     version: ros2
-  src/ThirdParty/control_msgs:
-    type: git
-    url: https://github.com/ros-controls/control_msgs.git
-    version: foxy-devel
-  src/ThirdParty/control_toolbox:
-    type: git
-    url: https://github.com/ros-controls/control_toolbox.git
-    version: ros2-master
-  src/ThirdParty/diagnostics:
-    type: git
-    url: https://github.com/ros/diagnostics.git
-    version: galactic
   src/ThirdParty/gazebo_ros2_control:
     type: git
-    url: https://github.com/pal-robotics-forks/gazebo_ros2_control.git
-    version: add-imu-sensor-parse
+    url: https://github.com/ros-controls/gazebo_ros2_control.git
+    version: master
   src/ThirdParty/hey5_description:
     type: git
     url: https://github.com/pal-robotics/hey5_description.git
@@ -59,30 +47,18 @@ repositories:
     type: git
     url: https://github.com/pal-robotics/pmb2_robot.git
     version: foxy-devel
-  src/ThirdParty/rcl_interfaces:
-    type: git
-    url: https://github.com/ros2/rcl_interfaces.git
-    version: galactic
-  src/ThirdParty/realtime_tools:
-    type: git
-    url: https://github.com/ros-controls/realtime_tools.git
-    version: foxy-devel
   src/ThirdParty/ros2_control:
     type: git
     url: https://github.com/ros-controls/ros2_control.git
-    version: 0.7.1
-  src/ThirdParty/ros2_controllers:
+    version: master
+  src/ThirdParty/ros2_controller:
     type: git
     url: https://github.com/ros-controls/ros2_controllers.git
-    version: 0.4.0
+    version: master
   src/ThirdParty/teleop_tools:
     type: git
     url: https://github.com/ros-teleop/teleop_tools.git
     version: foxy-devel
-  src/ThirdParty/test_interface_files:
-    type: git
-    url: https://github.com/ros2/test_interface_files.git
-    version: galactic
   src/ThirdParty/tiago_description_calibration:
     type: git
     url: https://github.com/pal-robotics/tiago_description_calibration.git
@@ -98,12 +74,8 @@ repositories:
   src/ThirdParty/twist_mux:
     type: git
     url: https://github.com/ros-teleop/twist_mux.git
-    version: foxy-devel
+    version: galactic
   src/ThirdParty/urdf_test:
     type: git
     url: https://github.com/pal-robotics/urdf_test
     version: 2.0.0
-  src/ThirdParty/xacro:
-    type: git
-    url: https://github.com/ros/xacro.git
-    version: ros2
