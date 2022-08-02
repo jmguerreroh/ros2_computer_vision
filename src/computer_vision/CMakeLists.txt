@@ -14,6 +14,11 @@ find_package(sensor_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(PCL 1.8 REQUIRED)
+find_package(pcl_conversions REQUIRED)
+
+include_directories(${OpenCV_INCLUDE_DIRS})
+link_directories(${OpenCV_LIBRARY_DIRS})
+add_definitions(${OpenCV_DEFINITIONS})
 
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
@@ -35,6 +40,7 @@ ament_target_dependencies(
   "sensor_msgs"
   "std_msgs"
   "OpenCV"
+  "PCL"
 )
 
 target_link_libraries(cv_node ${PCL_LIBRARIES})
@@ -57,6 +63,8 @@ ament_target_dependencies(
   "sensor_msgs"
   "std_msgs"
   "OpenCV"
+  "PCL"
+  "pcl_conversions"
 )
 
 target_link_libraries(pcl_node ${PCL_LIBRARIES})
@@ -79,15 +87,12 @@ ament_target_dependencies(
   "sensor_msgs"
   "std_msgs"
   "OpenCV"
+  "PCL"
+  "pcl_conversions"
 )
   
 target_link_libraries(cv_pcl_node ${PCL_LIBRARIES})
   
-install(TARGETS cv_pcl_node
-  DESTINATION lib/${PROJECT_NAME})
-
-target_link_libraries(cv_pcl_node ${PCL_LIBRARIES})
-
 install(TARGETS cv_pcl_node
   DESTINATION lib/${PROJECT_NAME})
 
