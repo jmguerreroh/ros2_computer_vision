@@ -51,7 +51,7 @@ repositories:
     type: git
     url: https://github.com/ros-controls/ros2_control.git
     version: master
-  src/ThirdParty/ros2_controller:
+  src/ThirdParty/ros2_controllers:
     type: git
     url: https://github.com/ros-controls/ros2_controllers.git
     version: master
