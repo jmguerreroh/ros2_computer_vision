@@ -34,7 +34,7 @@
 # aws_house     - x:  0.0 - y:   0.0  - z: 0.0 - roll: 0.0 - pitch: 0.0 - yaw:  0.0
 # aws_bookstore - x:  0.0 - y:   0.0  - z: 0.0 - roll: 0.0 - pitch: 0.0 - yaw:  0.0
 # aws_warehouse - x:  0.0 - y:   0.0  - z: 0.1 - roll: 0.0 - pitch: 0.0 - yaw:  0.0
-# aws_hospital  - x:  0.0 - y:  -1.0  - z: 0.0 - roll: 0.0 - pitch: 0.0 - yaw: 1.58
+# aws_hospital  - x:  0.0 - y:   1.0  - z: 0.0 - roll: 0.0 - pitch: 0.0 - yaw: 1.58
 # aws_racetrack - x: 2.75 - y: -15.0  - z: 0.2 - roll: 0.0 - pitch: 0.0 - yaw:  0.0
 
 computer_vision:
