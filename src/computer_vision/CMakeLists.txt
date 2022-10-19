@@ -97,12 +97,7 @@ install(TARGETS cv_pcl_node
   DESTINATION lib/${PROJECT_NAME})
 
   
-# Launcher
-install(DIRECTORY  launch
-        DESTINATION share/${PROJECT_NAME})
-
-# Configuration
-install(DIRECTORY  config
+install(DIRECTORY launch config params maps
         DESTINATION share/${PROJECT_NAME})
 
 #######
