@@ -31,6 +31,10 @@ repositories:
     type: git
     url: https://github.com/pal-robotics/launch_pal.git
     version: 0.0.3
+  src/ThirdParty/navigation2:
+    type: git
+    url: https://github.com/gezp/navigation2.git
+    version: fix_obstacle_layer
   src/ThirdParty/pal_gazebo_worlds:
     type: git
     url: https://github.com/pal-robotics/pal_gazebo_worlds.git
@@ -53,8 +57,12 @@ repositories:
     version: master
   src/ThirdParty/ros2_controllers:
     type: git
-    url: https://github.com/ros-controls/ros2_controllers.git
+    url: https://github.com/jmguerreroh/ros2_controllers.git
     version: master
+  src/ThirdParty/slam_toolbox:
+    type: git
+    url: https://github.com/SteveMacenski/slam_toolbox.git
+    version: ros2
   src/ThirdParty/teleop_tools:
     type: git
     url: https://github.com/ros-teleop/teleop_tools.git
