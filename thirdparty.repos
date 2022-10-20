@@ -19,18 +19,14 @@ repositories:
     type: git
     url: https://github.com/aws-robotics/aws-robomaker-small-warehouse-world.git
     version: ros2
-  src/ThirdParty/gazebo_ros2_control:
-    type: git
-    url: https://github.com/ros-controls/gazebo_ros2_control.git
-    version: master
   src/ThirdParty/hey5_description:
     type: git
     url: https://github.com/pal-robotics/hey5_description.git
-    version: foxy-devel
+    version: humble-devel
   src/ThirdParty/launch_pal:
     type: git
-    url: https://github.com/pal-robotics/launch_pal.git
-    version: 0.0.3
+    url: https://github.com/jmguerreroh/launch_pal.git
+    version: humble-devel-no-arm
   src/ThirdParty/navigation2:
     type: git
     url: https://github.com/gezp/navigation2.git
@@ -38,27 +34,19 @@ repositories:
   src/ThirdParty/pal_gazebo_worlds:
     type: git
     url: https://github.com/pal-robotics/pal_gazebo_worlds.git
-    version: foxy-devel
+    version: humble-devel
   src/ThirdParty/pal_gripper:
     type: git
     url: https://github.com/pal-robotics/pal_gripper.git
-    version: foxy-devel
+    version: humble-devel
   src/ThirdParty/pmb2_navigation:
     type: git
     url: https://github.com/pal-robotics/pmb2_navigation.git
-    version: foxy-devel
+    version: humble-devel
   src/ThirdParty/pmb2_robot:
     type: git
     url: https://github.com/pal-robotics/pmb2_robot.git
-    version: foxy-devel
-  src/ThirdParty/ros2_control:
-    type: git
-    url: https://github.com/ros-controls/ros2_control.git
-    version: master
-  src/ThirdParty/ros2_controllers:
-    type: git
-    url: https://github.com/jmguerreroh/ros2_controllers.git
-    version: master
+    version: humble-devel
   src/ThirdParty/slam_toolbox:
     type: git
     url: https://github.com/SteveMacenski/slam_toolbox.git
@@ -70,20 +58,24 @@ repositories:
   src/ThirdParty/tiago_description_calibration:
     type: git
     url: https://github.com/pal-robotics/tiago_description_calibration.git
-    version: foxy-devel
+    version: humble-devel
+  src/ThirdParty/tiago_moveit_config:
+    type: git
+    url: https://github.com/jmguerreroh/tiago_moveit_config.git
+    version: humble-devel-no-arm
+  src/ThirdParty/tiago_navigation:
+    type: git
+    url: https://github.com/pal-robotics/tiago_navigation.git
+    version: humble-devel
   src/ThirdParty/tiago_robot:
     type: git
-    url: https://github.com/fmrico/tiago_robot.git
-    version: no-arm
+    url: https://github.com/pal-robotics/tiago_robot.git
+    version: humble-devel
   src/ThirdParty/tiago_simulation:
     type: git
     url: https://github.com/pal-robotics/tiago_simulation.git
-    version: foxy-devel
-  src/ThirdParty/twist_mux:
-    type: git
-    url: https://github.com/ros-teleop/twist_mux.git
-    version: galactic
+    version: humble-devel
   src/ThirdParty/urdf_test:
     type: git
-    url: https://github.com/pal-robotics/urdf_test
-    version: 2.0.0
+    url: https://github.com/pal-robotics/urdf_test.git
+    version: humble-devel
