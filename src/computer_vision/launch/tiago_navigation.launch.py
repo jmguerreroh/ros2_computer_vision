@@ -44,9 +44,7 @@ def generate_launch_description():
         default_value='False',
         description='Whether run a SLAM')
 
-    cv_dir = get_package_share_directory('computer_vision')
-
-    config = os.path.join(cv_dir, 'config', 'params.yaml')
+    config = os.path.join(launch_rmw_dir, 'config', 'params.yaml')
 
     with open(config, "r") as stream:
         try:
