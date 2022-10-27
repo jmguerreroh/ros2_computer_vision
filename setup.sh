@@ -6,6 +6,8 @@ sudo apt install python3-vcstool python3-pip python3-rosdep python3-colcon-commo
 vcs import < thirdparty.repos
 
 # Building project
+sudo rosdep init
+rosdep update
 rosdep install --from-paths src --ignore-src -r -y
 colcon build --symlink-install
 
