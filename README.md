@@ -29,6 +29,53 @@ ros2 launch computer_vision sim.launch.py
 
 To change the Gazebo world or the initial position/rotation of the Tiago robot, you can modify the `config/params.yaml` file.
 
+If you have a low performance, close the Gazebo's client. Check gzclient process, and kill it:
+```bash
+kill -9 `pgrep -f gzclient`
+``` 
+
+# Run Navigation in ROS2
+
+You can use [Nav2] using Tiago in the selected world:
+
+```bash
+source install/setup.sh
+ros2 launch computer_vision tiago_navigation.launch.py
+``` 
+Also, you can use [Keepout Zones], just create a new map including the excluded areas, and use the same name adding `_keep`, now publish the map running:
+
+```bash
+source install/setup.sh
+ros2 launch computer_vision keepzone.launch.py
+``` 
+
+Just some AWS worlds are included. You can [Navigate While Mapping] and create your own map using the [SLAM Toolbox] provided. In different terminals:
+
+* Run the SLAM Toolbox:
+
+```bash
+ros2 launch slam_toolbox online_async_launch.py params_file:=install/slam_toolbox/share/slam_toolbox/config/mapper_params_online_async.yaml use_sim_time:=true
+```
+
+* Activate the map server:
+
+```bash
+# mapserver
+ros2 launch nav2_map_server map_saver_server.launch.py
+```
+
+* Check the map in RViz:
+
+```bash
+rviz2 --ros-args -p use_sim_time:=true
+```
+
+* Save the map:
+
+```bash
+ros2 run nav2_map_server map_saver_cli --ros-args -p use_sim_time:=true
+```
+
 # Run examples in ROS2
 
 * OpenCV node
@@ -60,3 +107,7 @@ Copyright &copy; 2022.
 
 [Universidad Rey Juan Carlos]: https://www.urjc.es/
 [José Miguel Guerrero]: https://sites.google.com/view/jmguerrero
+[Nav2]: https://navigation.ros.org/
+[Keepout Zones]: https://navigation.ros.org/tutorials/docs/navigation2_with_keepout_filter.html?highlight=keep
+[SLAM Toolbox]: https://vimeo.com/378682207
+[Navigate While Mapping]: https://navigation.ros.org/tutorials/docs/navigation2_with_slam.html
