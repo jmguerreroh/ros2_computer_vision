@@ -9,7 +9,7 @@ vcs import < thirdparty.repos
 sudo rosdep init
 rosdep update
 rosdep install --from-paths src --ignore-src -r -y
-colcon build --symlink-install
+colcon build --symlink-install --cmake-args -DBUILD_TESTING=OFF
 
 # Setup Gazebo to find models - GAZEBO_MODEL_PATH
 source /usr/share/gazebo/setup.bash
