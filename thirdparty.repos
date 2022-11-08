@@ -58,7 +58,7 @@ repositories:
   src/ThirdParty/tiago_description_calibration:
     type: git
     url: https://github.com/pal-robotics/tiago_description_calibration.git
-    version: humble-devel
+    version: foxy-devel
   src/ThirdParty/tiago_moveit_config:
     type: git
     url: https://github.com/jmguerreroh/tiago_moveit_config.git
