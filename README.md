@@ -60,7 +60,6 @@ ros2 launch slam_toolbox online_async_launch.py params_file:=install/slam_toolbo
 * Activate the map server:
 
 ```bash
-# mapserver
 ros2 launch nav2_map_server map_saver_server.launch.py
 ```
 
