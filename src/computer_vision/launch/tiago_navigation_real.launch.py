@@ -22,7 +22,7 @@ from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, GroupAction
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PythonExpression
 
 
 def generate_launch_description():
@@ -119,18 +119,40 @@ def generate_launch_description():
                           'use_namespace': use_namespace,
                           'rviz_config': rviz_config_file}.items())
 
-    bringup_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(launch_dir, 'bringup_launch.py')),
+    slam_cmd = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(launch_dir, 'slam_launch.py')),
+        condition=IfCondition(slam),
         launch_arguments={'namespace': namespace,
-                          'use_namespace': use_namespace,
-                          'slam': slam,
-                          'map': map_yaml_file,
-                          'use_sim_time': use_sim_time,
-                          'params_file': params_file,
-                          'autostart': autostart,
-                          'use_composition': use_composition,
-                          'use_respawn': use_respawn}.items())
+                            'use_sim_time': use_sim_time,
+                            'autostart': autostart,
+                            'use_respawn': use_respawn,
+                            'params_file': params_file}.items())
+
+    localization_cmd = IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(os.path.join(launch_dir,
+                                                       'localization_launch.py')),
+            condition=IfCondition(PythonExpression(['not ', slam])),
+            launch_arguments={'namespace': namespace,
+                              'map': map_yaml_file,
+                              'use_sim_time': use_sim_time,
+                              'autostart': autostart,
+                              'params_file': params_file,
+                              'use_composition': use_composition,
+                              'use_respawn': use_respawn,
+                              'container_name': 'nav2_container'}.items())
+
+    # bringup_cmd = IncludeLaunchDescription(
+    #     PythonLaunchDescriptionSource(
+    #         os.path.join(launch_dir, 'bringup_launch.py')),
+    #     launch_arguments={'namespace': namespace,
+    #                       'use_namespace': use_namespace,
+    #                       'slam': slam,
+    #                       'map': map_yaml_file,
+    #                       'use_sim_time': use_sim_time,
+    #                       'params_file': params_file,
+    #                       'autostart': autostart,
+    #                       'use_composition': use_composition,
+    #                       'use_respawn': use_respawn}.items())
 
     nav_cmd = IncludeLaunchDescription(
             PythonLaunchDescriptionSource(os.path.join(cv_dir, 'launch', 'navigation_launch_real.py')),
@@ -160,6 +182,8 @@ def generate_launch_description():
     # Add the actions to launch all of the navigation nodes
     ld.add_action(rviz_cmd)
     ld.add_action(nav_cmd)
-    ld.add_action(bringup_cmd)
+    # ld.add_action(bringup_cmd)
+    ld.add_action(slam_cmd)
+    ld.add_action(localization_cmd)
 
     return ld
