@@ -56,11 +56,11 @@ Just some AWS worlds are included. You can [Navigate While Mapping] and create y
 ```bash
 ros2 launch slam_toolbox online_async_launch.py params_file:=install/slam_toolbox/share/slam_toolbox/config/mapper_params_online_async.yaml use_sim_time:=true
 ```
+In slam_toolbox/config/mapper_params_online_async.yaml change scan_topic from /scan to /scan_raw
 
 * Activate the map server:
 
 ```bash
-# mapserver
 ros2 launch nav2_map_server map_saver_server.launch.py
 ```
 
