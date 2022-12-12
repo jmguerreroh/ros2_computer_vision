@@ -24,7 +24,7 @@ Execute installation script:
 
 ```bash
 source install/setup.sh
-ros2 launch computer_vision sim.launch.py
+ros2 launch computer_vision simulation.launch.py
 ``` 
 
 To change the Gazebo world or the initial position/rotation of the Tiago robot, you can modify the `config/params.yaml` file.
