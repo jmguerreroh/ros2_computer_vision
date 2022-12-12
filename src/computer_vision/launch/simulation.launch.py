@@ -19,7 +19,7 @@ from os import environ, pathsep
 from ament_index_python.packages import get_package_share_directory, get_package_prefix
 
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable, TimerAction
+from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable, DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 from launch_pal.include_utils import include_launch_py_description
@@ -65,6 +65,17 @@ def generate_launch_description():
         except yaml.YAMLError as exc:
             print(exc)
 
+    arm_arg = DeclareLaunchArgument(
+        'arm', default_value='no-arm',
+        description='Tiago arm'
+    )
+
+    world_name = conf['computer_vision']['world']
+    world_name_arg = DeclareLaunchArgument(
+        'world_name', default_value=world_name,
+        description='World name'
+    )
+
     # Default: Original path for PAL worlds
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
@@ -73,7 +84,7 @@ def generate_launch_description():
     )
 
     # Specific path for AWS worlds
-    if "aws" in conf['computer_vision']['world']:
+    if "aws" in world_name:
         # Default: Small house
         gazebo = IncludeLaunchDescription(
             PythonLaunchDescriptionSource([os.path.join(
@@ -81,28 +92,28 @@ def generate_launch_description():
                 'launch'), '/view_small_house.launch.py']),
         )
         # Hospital
-        if "hospital" in conf['computer_vision']['world']:
+        if "hospital" in world_name:
             gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('aws_robomaker_hospital_world'),
                     'launch'), '/view_hospital.launch.py']),
             )
         # Racetrack - default day. Change mode in /view_racetrack.launch.py
-        if "racetrack" in conf['computer_vision']['world']:
+        if "racetrack" in world_name:
             gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('aws_robomaker_racetrack_world'),
                     'launch'), '/view_racetrack.launch.py']),
             )
         # Small warehouse
-        if "warehouse" in conf['computer_vision']['world']:
+        if "warehouse" in world_name:
             gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('aws_robomaker_small_warehouse_world'),
                     'launch'), '/no_roof_small_warehouse.launch.py']),
             )
         # Bookstore
-        if "bookstore" in conf['computer_vision']['world']:
+        if "bookstore" in world_name:
             gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('aws_robomaker_bookstore_world'),
@@ -136,19 +147,16 @@ def generate_launch_description():
     if 'GAZEBO_RESOURCE_PATH' in environ:
         resource_path += pathsep + environ['GAZEBO_RESOURCE_PATH']
 
-    return LaunchDescription([
-        SetEnvironmentVariable("GAZEBO_MODEL_PATH", model_path),
-        # Using this prevents shared library from being found
-        SetEnvironmentVariable("GAZEBO_RESOURCE_PATH", resource_path),
-        gazebo,
-        TimerAction(
-            period=5.0,
-            actions=[tiago_spawn],
-            cancel_on_shutdown=False
-        ),
-        TimerAction(
-            period=7.0,
-            actions=[tiago_bringup],
-            cancel_on_shutdown=False
-        )
-    ])
+     # Create the launch description and populate
+    ld = LaunchDescription()
+
+    ld.add_action(SetEnvironmentVariable('GAZEBO_MODEL_PATH', model_path))
+    # Using this prevents shared library from being found
+    # ld.add_action(SetEnvironmentVariable('GAZEBO_RESOURCE_PATH', tiago_resource_path))
+    ld.add_action(arm_arg)
+    ld.add_action(world_name_arg)
+    ld.add_action(gazebo)
+    ld.add_action(tiago_spawn)
+    ld.add_action(tiago_bringup)
+
+    return ld

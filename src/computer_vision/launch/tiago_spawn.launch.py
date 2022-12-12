@@ -49,7 +49,7 @@ def generate_launch_description():
         'model_name', default_value='tiago',
         description='Gazebo model name'
     )
-
+   
     tiago_state_publisher = include_launch_py_description(
         'tiago_description',
         ['launch', 'robot_state_publisher.launch.py'])
@@ -68,9 +68,12 @@ def generate_launch_description():
                                    ],
                         output='screen')
 
-    return LaunchDescription([
-        # gz_pose,
-        model_name,
-        tiago_state_publisher,
-        tiago_entity,
-    ])
+    # Create the launch description and populate
+    ld = LaunchDescription()
+
+    # ld.add_action(gz_pose)
+    ld.add_action(model_name)
+    ld.add_action(tiago_state_publisher)
+    ld.add_action(tiago_entity)
+
+    return ld

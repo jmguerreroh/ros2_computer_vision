@@ -25,8 +25,8 @@ repositories:
     version: humble-devel
   src/ThirdParty/launch_pal:
     type: git
-    url: https://github.com/jmguerreroh/launch_pal.git
-    version: humble-devel-no-arm
+    url: https://github.com/pal-robotics/launch_pal.git
+    version: master
   src/ThirdParty/navigation2:
     type: git
     url: https://github.com/gezp/navigation2.git
@@ -55,14 +55,10 @@ repositories:
     type: git
     url: https://github.com/ros-teleop/teleop_tools.git
     version: foxy-devel
-  src/ThirdParty/tiago_description_calibration:
-    type: git
-    url: https://github.com/pal-robotics/tiago_description_calibration.git
-    version: foxy-devel
   src/ThirdParty/tiago_moveit_config:
     type: git
-    url: https://github.com/jmguerreroh/tiago_moveit_config.git
-    version: humble-devel-no-arm
+    url: https://github.com/pal-robotics/tiago_moveit_config.git
+    version: humble-devel
   src/ThirdParty/tiago_navigation:
     type: git
     url: https://github.com/pal-robotics/tiago_navigation.git
