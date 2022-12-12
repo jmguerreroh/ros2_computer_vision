@@ -1,5 +1,5 @@
 # Launch Gazebo world with Tiago (use computer_vision/config/params.yaml to change Tiago position and world)
-ros2 launch computer_vision sim.launch.py
+ros2 launch computer_vision simulation.launch.py
 
 # Launch teleop to move Tiago
 ros2 run key_teleop key_teleop
@@ -17,4 +17,4 @@ ros2 run computer_vision cv_pcl_node
 colcon build --symlink-install --packages-select computer_vision
 
 # Run rviz
-rviz2
+rviz2 --ros-args -p use_sim_time:=true
