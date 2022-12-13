@@ -1,4 +1,5 @@
 # Copyright (c) 2018 Intel Corporation
+# Modified by José Miguel Guerrero Hernández
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,8 +21,7 @@ from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, GroupAction, SetEnvironmentVariable
 from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration, PythonExpression
-from launch_ros.actions import LoadComposableNodes
-from launch_ros.actions import Node
+from launch_ros.actions import LoadComposableNodes, Node
 from launch_ros.descriptions import ComposableNode
 from nav2_common.launch import RewrittenYaml
 
@@ -37,6 +37,7 @@ def generate_launch_description():
     use_composition = LaunchConfiguration('use_composition')
     container_name = LaunchConfiguration('container_name')
     use_respawn = LaunchConfiguration('use_respawn')
+    log_level = LaunchConfiguration('log_level')
 
     lifecycle_nodes = ['controller_server',
                        'smoother_server',
@@ -100,6 +101,10 @@ def generate_launch_description():
         'use_respawn', default_value='False',
         description='Whether to respawn if a node crashes. Applied when composition is disabled.')
 
+    declare_log_level_cmd = DeclareLaunchArgument(
+        'log_level', default_value='info',
+        description='log level')
+
     load_nodes = GroupAction(
         condition=IfCondition(PythonExpression(['not ', use_composition])),
         actions=[
@@ -110,6 +115,7 @@ def generate_launch_description():
                 respawn=use_respawn,
                 respawn_delay=2.0,
                 parameters=[configured_params],
+                arguments=['--ros-args', '--log-level', log_level],
                 remappings=remappings + [('nav_vel', 'cmd_vel_nav')]),
             Node(
                 package='nav2_smoother',
@@ -119,6 +125,7 @@ def generate_launch_description():
                 respawn=use_respawn,
                 respawn_delay=2.0,
                 parameters=[configured_params],
+                arguments=['--ros-args', '--log-level', log_level],
                 remappings=remappings),
             Node(
                 package='nav2_planner',
@@ -128,6 +135,7 @@ def generate_launch_description():
                 respawn=use_respawn,
                 respawn_delay=2.0,
                 parameters=[configured_params],
+                arguments=['--ros-args', '--log-level', log_level],
                 remappings=remappings),
             Node(
                 package='nav2_behaviors',
@@ -137,6 +145,7 @@ def generate_launch_description():
                 respawn=use_respawn,
                 respawn_delay=2.0,
                 parameters=[configured_params],
+                arguments=['--ros-args', '--log-level', log_level],
                 remappings=remappings),
             Node(
                 package='nav2_bt_navigator',
@@ -146,6 +155,7 @@ def generate_launch_description():
                 respawn=use_respawn,
                 respawn_delay=2.0,
                 parameters=[configured_params],
+                arguments=['--ros-args', '--log-level', log_level],
                 remappings=remappings),
             Node(
                 package='nav2_waypoint_follower',
@@ -155,6 +165,7 @@ def generate_launch_description():
                 respawn=use_respawn,
                 respawn_delay=2.0,
                 parameters=[configured_params],
+                arguments=['--ros-args', '--log-level', log_level],
                 remappings=remappings),
             Node(
                 package='nav2_velocity_smoother',
@@ -164,6 +175,7 @@ def generate_launch_description():
                 respawn=use_respawn,
                 respawn_delay=2.0,
                 parameters=[configured_params],
+                arguments=['--ros-args', '--log-level', log_level],
                 remappings=remappings +
                            [('nav_vel', 'cmd_vel_nav'), ('cmd_vel_smoothed', 'nav_vel')]),
             Node(
@@ -171,6 +183,7 @@ def generate_launch_description():
                 executable='lifecycle_manager',
                 name='lifecycle_manager_navigation',
                 output='screen',
+                arguments=['--ros-args', '--log-level', log_level],
                 parameters=[{'use_sim_time': use_sim_time},
                             {'autostart': autostart},
                             {'node_names': lifecycle_nodes}]),
@@ -248,6 +261,7 @@ def generate_launch_description():
     ld.add_action(declare_use_composition_cmd)
     ld.add_action(declare_container_name_cmd)
     ld.add_action(declare_use_respawn_cmd)
+    ld.add_action(declare_log_level_cmd)
 
     # Add the actions to launch all of the navigation nodes
     ld.add_action(load_nodes)

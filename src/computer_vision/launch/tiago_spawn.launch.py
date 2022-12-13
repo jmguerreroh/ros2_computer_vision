@@ -12,6 +12,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import os
+import yaml
+
+from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
@@ -19,9 +23,6 @@ from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from launch_pal.include_utils import include_launch_py_description
 
-import os
-from ament_index_python.packages import get_package_share_directory
-import yaml
 
 def generate_launch_description():
     #    This format doesn't work because we have to expand gzpose into
@@ -56,14 +57,13 @@ def generate_launch_description():
 
     tiago_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
                         arguments=['-topic', 'robot_description',
-                                   '-entity', LaunchConfiguration(
-                                       'model_name'),
-                                       conf['computer_vision']['tiago_position']['x'],
-                                       conf['computer_vision']['tiago_position']['y'],
-                                       conf['computer_vision']['tiago_position']['z'],
-                                       conf['computer_vision']['tiago_position']['roll'],
-                                       conf['computer_vision']['tiago_position']['pitch'],
-                                       conf['computer_vision']['tiago_position']['yaw'],
+                                   '-entity', LaunchConfiguration('model_name'),
+                                   ' '.join(['-x', str(conf['computer_vision']['tiago_position']['x'])]),
+                                   ' '.join(['-y', str(conf['computer_vision']['tiago_position']['y'])]),
+                                   ' '.join(['-z', str(conf['computer_vision']['tiago_position']['z'])]),
+                                   ' '.join(['-R', str(conf['computer_vision']['tiago_position']['roll'])]),
+                                   ' '.join(['-P', str(conf['computer_vision']['tiago_position']['pitch'])]),
+                                   ' '.join(['-Y', str(conf['computer_vision']['tiago_position']['yaw'])]),
                                    # LaunchConfiguration('gzpose'),
                                    ],
                         output='screen')

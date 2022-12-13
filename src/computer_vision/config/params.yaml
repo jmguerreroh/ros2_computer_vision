@@ -38,11 +38,11 @@
 # aws_racetrack - x: 2.75 - y: -15.0  - z: 0.2 - roll: 0.0 - pitch: 0.0 - yaw:  0.0
 
 computer_vision:
-  world: "aws_house"
+  world: aws_house
   tiago_position:
-    x: '-x 0.0'
-    y: '-y 0.0'
-    z: '-z 0.0'
-    roll: '-R 0.0'
-    pitch: '-P 0.0'
-    yaw: '-Y 0.0'
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
