@@ -37,7 +37,7 @@ class ComputerVisionSubscriber : public rclcpp::Node
     : Node("opencv_subscriber")
     {
       auto qos = rclcpp::QoS( rclcpp::QoSInitialization( RMW_QOS_POLICY_HISTORY_KEEP_LAST, 5 ));
-      qos.reliability(RMW_QOS_POLICY_RELIABILITY_BEST_EFFORT);
+      qos.reliability(RMW_QOS_POLICY_RELIABILITY_RELIABLE);
    
 
       subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
