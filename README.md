@@ -20,6 +20,7 @@ Execute installation script:
 # Run Gazebo & Tiago in ROS2
 
 ```bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 source install/setup.sh
 ros2 launch computer_vision simulation.launch.py
 ``` 
