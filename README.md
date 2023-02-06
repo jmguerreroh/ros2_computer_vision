@@ -21,7 +21,7 @@ Execute installation script:
 
 ```bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-source install/setup.sh
+source install/setup.bash
 ros2 launch computer_vision simulation.launch.py
 ``` 
 
